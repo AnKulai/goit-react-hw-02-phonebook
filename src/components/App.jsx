@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { Report } from 'notiflix';
+import { Report, Notify } from 'notiflix';
 import ContactList from './ContactList/ContactList';
 import Filterblock from './Filterblock/Filterblock';
 import Phonebook from './Phonebook/Phonebook';
@@ -29,6 +29,7 @@ class App extends Component {
     const filterList = this.state.contacts.filter(contact => contact.id !== id);
     if (filterList.length !== this.state.contacts.length) {
       this.setState({ contacts: [...filterList] });
+      Notify.success(`Contact removed`);
     }
   };
 

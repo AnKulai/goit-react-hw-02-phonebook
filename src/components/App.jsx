@@ -26,9 +26,8 @@ class App extends Component {
 
   removeContact = ({ target }) => {
     const id = target.dataset.nanoid;
-    console.log(target.dataset);
     const filterList = this.state.contacts.filter(contact => contact.id != id);
-    if (filterList.length != this.state.contacts.length) {
+    if (filterList.length !== this.state.contacts.length) {
       this.setState({ contacts: [...filterList] });
     }
   };
